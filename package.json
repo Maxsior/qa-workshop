@@ -7,7 +7,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "parcel src/index.html"
+    "start": "parcel src/index.html",
+    "test": "jest"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -15,6 +16,26 @@
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "parcel": "^2.0.1"
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
+    "babel-jest": "^27.4.5",
+    "jest": "^27.4.5",
+    "parcel": "^2.0.1",
+    "react-test-renderer": "^17.0.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      [
+        "@babel/preset-react",
+        {
+          "runtime": "automatic"
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "testEnvironment": "jsdom"
   }
 }
